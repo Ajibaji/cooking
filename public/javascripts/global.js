@@ -61,6 +61,7 @@ function showRecipeDetails(event) {
 }
 
 function searchHttp(event) {
+	
 	var tableContent = '';
 
 	var query = $('#inputSearchQuery').val();
@@ -135,7 +136,6 @@ function deleteRecipe(event) {
 		}).done(function( response ) {
 
 			if (response.msg === '') {
-				
 			}
 			else {
 				alert('Error: ' + response.msg);
