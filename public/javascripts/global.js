@@ -135,6 +135,7 @@ function deleteRecipe(event) {
 		}).done(function( response ) {
 
 			if (response.msg === '') {
+				
 			}
 			else {
 				alert('Error: ' + response.msg);
