@@ -59,17 +59,17 @@ function deleteRecipe(event) {
 
 	if (confirmation === true) {
 		$.ajax({
-				type: 'DELETE',
-				url: '/documents/deletedocument/' + $(this).attr('rel')
+			type: 'DELETE',
+			url: '/documents/deletedocument/' + $(this).attr('rel')
 		}).done(function( response ) {
 
-				if (response.msg === '') {
-				}
-				else {
-						alert('Error: ' + response.msg);
-				}
+			if (response.msg === '') {
+			}
+			else {
+				alert('Error: ' + response.msg);
+			}
 
-				populateTable();
+			populateTable();
 		});
 	} else {
 		return false;
