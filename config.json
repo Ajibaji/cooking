@@ -1,4 +1,3 @@
 {
-	"recipeDataBase": "recipes",
-	"userDatabase": "users"
+	"dataBase": "recipes"
 }
