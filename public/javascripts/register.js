@@ -16,12 +16,16 @@
 				'password': $('#inputPassword').val()
 			};
 
+			alert('Account created sucessfuly');
+
 			$.ajax({
 				type: 'POST',
 				data: userDetails,
 				url: '/register',
 				dataType: 'JSON'
 			}).done();
+
+			
 		}
 		else {
 			alert('Please fill in all fields');
@@ -43,6 +47,8 @@
 				'username': $('#inputUsername').val(),
 				'firstname': $('#inputFirstname').val()
 			};
+
+			alert('Logged in successfully');
 
 			$.ajax({
 				type: 'POST',

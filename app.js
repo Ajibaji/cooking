@@ -7,17 +7,25 @@ var bodyParser = require('body-parser');
 
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/sg');
+var devDb = monk('localhost:27017/sgTest');
+var prodDb = monk('localhost:27017/sg');
 
 var routes = require('./lib/routes/index');
 var documents = require('./lib/routes/documents');
 
 var app = express();
 
-app.use(function(req, res, next){
-	req.db = db;
-	next();
-});
+if(app.get('env' === 'development')) {
+	app.use(function(req, res, next){
+		req.db = devDb;
+		next();
+	});
+} else {
+	app.use(function(req, res, next){
+		req.db = prodDb;
+		next();
+	});
+}
 
 app.set('views', path.join(__dirname, 'public/views'));
 app.set('view engine', 'jade');
@@ -45,7 +53,7 @@ if (app.get('env') === 'development') {
 			error: err
 		});
 	});
-}
+} 
 
 app.use(function(err, req, res, next) {
 	res.status(err.status || 500);
