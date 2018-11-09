@@ -7,17 +7,16 @@ context('User Accounts', function() {
 	var testFirstName = 'testFirstName';
 	var testSirName = 'testSirName';
 
-	var testUsernameLog = 'realUsername';
-	var testPasswordLog = 'realPassword';
+	var testUsernameLog = 'testUser1';
+	var testPasswordLog = 'testPassword1';
 
 	beforeEach(function() {
 		process.env.NODE_ENV = 'dev';
-		// add test data
 		cy.visit('/');
 	});
 
 	afterEach(function() {
-		// clear test data
+		cy.exec('node test/helpers/databaseSetupScripts');
 		process.env = OLD_ENV;
 	});
 
