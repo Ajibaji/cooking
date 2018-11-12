@@ -14,7 +14,6 @@ pipeline {
         stage("Testing") {
             steps {
                 sh "npm test"
-                sh "npm start"
             }
         }
         stage("Code Quality") {
