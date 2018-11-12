@@ -6,6 +6,12 @@
     "start": "node ./bin/www",
     "test": "jest; cypress"
   },
+  "jest" : {
+    "testPathIgnorePatterns" : [
+      "/config/",
+      "/helpers/"
+    ]
+  },
   "dependencies": {
     "bluebird": "^3.4.6",
     "body-parser": "^1.18.3",
