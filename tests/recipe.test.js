@@ -1,4 +1,4 @@
-var Recipe = require('../../lib/model/recipe');
+var Recipe = require('../lib/model/recipe');
 
 const testName = 'testName';
 const testTime = '11:00';

@@ -1,4 +1,4 @@
-var User = require('../../lib/model/user');
+var User = require('../lib/model/user');
 
 var testUsername = 'testUsername';
 var testPassword = 'testPassword';
