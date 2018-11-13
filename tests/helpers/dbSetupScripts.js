@@ -2,8 +2,9 @@ const User = require('../../lib/model/user');
 const Recipe = require('../../lib/model/recipe');
 
 const monk = require('monk');
-let db = monk('localhost:27017/sgTest'); // set to sg for dev db
+let db = monk('localhost:27017/sg'); // set to sgTest for test db
 let users = db.get('users');
+
 
 var testUserList = [
 	new User('testUser1', 'testPassword1', 'testFirstName1', 'testLastName1'),
@@ -16,13 +17,13 @@ var databaseSetup = {
 	addTestData: function() {
 		users.insert(testUserList)
 			.catch((err) => {
-				console.log(err);
+				// console.log(err);
             }).then(() => db.close());
 	},
 	clearTestData: function() {
 		users.drop()
 			.catch((err) => {
-				console.log(err);
+				// console.log(err);
             }).then(() => db.close());
 	},
 };
