@@ -18,13 +18,13 @@ var databaseSetup = {
 		users.insert(testUserList)
 			.catch((err) => {
 				// console.log(err);
-            }).then(() => db.close());
+			}).then(() => db.close());
 	},
 	clearTestData: function() {
 		users.drop()
 			.catch((err) => {
 				// console.log(err);
-            }).then(() => db.close());
+			}).then(() => db.close());
 	},
 };
 

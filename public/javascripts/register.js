@@ -15,6 +15,8 @@ function registerUser(event) {
 			'password': $('#inputPassword').val()
 		};
 
+		alert('registerted');
+
 		$.ajax({
 			type: 'POST',
 			data: userDetails,

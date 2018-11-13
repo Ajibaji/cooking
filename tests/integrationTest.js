@@ -22,21 +22,21 @@ describe('Integration tests', function() {
 
 	function makeGetRequest(url, expectedCode, done) {
 		request(app)
-				.get(url)
-				.set('Accept', 'application/json')
-				.expect('Content-Type', /html/)
-				.expect(expectedCode, done);
+			.get(url)
+			.set('Accept', 'application/json')
+			.expect('Content-Type', /html/)
+			.expect(expectedCode, done);
 	}
 	function makePostRequest(url, expectedCode, data, done) {
 		request(app)
-				.post(url)
-				.send(data)
-				.set('Accept', 'application/json')
-				.expect(expectedCode)
-				.end((err) => {
-					if(err) return done(err);
-					done();
-				});
+			.post(url)
+			.send(data)
+			.set('Accept', 'application/json')
+			.expect(expectedCode)
+			.end((err) => {
+				if(err) return done(err);
+				done();
+			});
 	}
 
 	describe('Database Integration Tests', function() {
@@ -58,27 +58,27 @@ describe('Integration tests', function() {
 	
 	describe('Get request Tests', function() {
 
-		it(" '/' should return status of 200", function(done) {
+		it(' \'/\' should return status of 200', function(done) {
 			makeGetRequest('/', 200, done);
 		});
 
-		it("'/recipestore' should return status of 200", function(done) {
+		it('\'/recipestore\' should return status of 200', function(done) {
 			makeGetRequest('/recipestore', 200, done);
 		});
 
-		it("'/recipe/:query' with valid query should return 200", function(done) {
+		it('\'/recipe/:query\' with valid query should return 200', function(done) {
 			makeGetRequest('/recipe/bread', 200, done);
 		});
 
-		it("'/contact' should return 200", function(done) {
+		it('\'/contact\' should return 200', function(done) {
 			makeGetRequest('/contact', 200, done);
 		});
 
-		it("'/login' should return 200", function(done) {
+		it('\'/login\' should return 200', function(done) {
 			makeGetRequest('/login', 200, done);
 		});
 
-		it("'/register' should return 200", function(done) {
+		it('\'/register\' should return 200', function(done) {
 			makeGetRequest('/register', 200, done);
 		});
 	});
@@ -87,7 +87,7 @@ describe('Integration tests', function() {
 
 		// login
 		
-		it("'/login' with valid params should return 200", function(done) {
+		it('\'/login\' with valid params should return 200', function(done) {
 			let data = {
 				'username': 'testUser1',
 				'password': 'testPassword1'
@@ -95,7 +95,7 @@ describe('Integration tests', function() {
 			makePostRequest('/login', 200, data, done);
 		});
 
-		it("'/login' with invalid params should return 418", function(done) {
+		it('\'/login\' with invalid params should return 418', function(done) {
 			let data = {
 				'username': 'testUser1',
 				'password': 'fakepassword'
@@ -105,7 +105,7 @@ describe('Integration tests', function() {
 
 		// register
 
-		it("'/register' with valid params should return 200", function(done) {
+		it('\'/register\' with valid params should return 200', function(done) {
 			let data = {
 				'username': 'newUser1',
 				'password': 'testPassword1',
@@ -115,7 +115,7 @@ describe('Integration tests', function() {
 			makePostRequest('/login', 200, data, done);
 		});
 
-		it("'/register' with invalid params should return 418", function(done) {
+		it('\'/register\' with invalid params should return 418', function(done) {
 			let data = {
 				'username': 'testUser1',
 				'password': 'testPassword1',
