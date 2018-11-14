@@ -23,6 +23,7 @@ function registerUser(event) {
 		}).always((data) => {
 			if(data.status === 200) {
 				alert('Registered and Logged in!');
+				window.location.href = 'http://localhost:3000/';
 			} else {
 				alert('Username Taken');
 			}
@@ -57,6 +58,7 @@ function login(event) {
 		}).always((data) => {
 			if(data.status === 200) {
 				alert('Logged in!');
+				window.location.href = 'http://localhost:3000/';
 			} else {
 				alert('Incorrect Username or Password entered');
 			}

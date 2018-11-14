@@ -26,5 +26,5 @@ test('Last name is correct', () => {
 
 test('Id can be set', () => {
 	testUser.setId(testId);
-	expect(testUser.id).toEqual(testId);
+	expect(testUser._id).toEqual(testId);
 });

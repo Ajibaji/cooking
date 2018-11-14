@@ -6,21 +6,26 @@ let db = monk('localhost:27017/sg'); // set to sgTest for test db
 let users = db.get('users');
 let recipes = db.get('recipes');
 
+let stubIdUser = new User('testUser1', 'testPassword1', 'testFirstName1', 'testLastName1');
+let stubIdRecipe = new Recipe('testRecipe1', 15, 'squash', 'flattern witrh a mallet');
 
 let testUserList = [
-	new User('testUser1', 'testPassword1', 'testFirstName1', 'testLastName1'),
-	new User('testUser2', 'testPassword2', 'testFirstName2', 'testLastName2'),
+	stubIdUser,
+	new User('testUser3', 'testPassword3', 'testFirstName3', 'testLastName3'),
 	new User('testUser3', 'testPassword3', 'testFirstName3', 'testLastName3')
 ];
 
 let testRecipeList = [
-	new Recipe('testRecipe1', 11, 'bread', 'boil'),
-	new Recipe('testRecipe2', 15, 'squash', 'flattern witrh a mallet'),
+	stubIdRecipe,
+	new Recipe('testRecipe1', 11, 'bread', 'boil')
 ];
 
 var databaseSetup = {
 
 	addTestData: function() {
+		stubIdUser.setId('5bec4b21d78d282e16f87415');
+		stubIdRecipe.set_id('5bec4b21d78d282e16f87415');
+		stubIdRecipe.setUserId(`j:\"5bec4b21d78d282e16f87415\"`);
 		users.insert(testUserList)
 			.catch((err) => {
 				// console.log(err);
