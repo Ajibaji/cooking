@@ -15,14 +15,18 @@ function registerUser(event) {
 			'password': $('#inputPassword').val()
 		};
 
-		alert('registerted');
-
 		$.ajax({
 			type: 'POST',
 			data: userDetails,
 			url: '/register',
 			dataType: 'JSON'
-		}).done();
+		}).always((data) => {
+			if(data.status === 200) {
+				alert('Registered and Logged in!');
+			} else {
+				alert('Username Taken');
+			}
+		});
 	}
 	else {
 		alert('Please fill in all fields');
@@ -42,7 +46,7 @@ function login(event) {
 
 		var userDetails = {
 			'username': $('#inputUsername').val(),
-			'firstname': $('#inputFirstname').val()
+			'password': $('#inputPassword').val()
 		};
 
 		$.ajax({
@@ -50,7 +54,13 @@ function login(event) {
 			data: userDetails,
 			url: '/login',
 			dataType: 'JSON'
-		}).done();
+		}).always((data) => {
+			if(data.status === 200) {
+				alert('Logged in!');
+			} else {
+				alert('Incorrect Username or Password entered');
+			}
+		});
 	}
 	else {
 		alert('Please fill in all fields');
