@@ -11,10 +11,4 @@ $(document).ready(function() {
 	$('#btnRegister').on('click', registerUser);
 	$('#btnLogin').on('click', login);
 	$('#btnLogout').on('click', logout);
-	$('#inputRecipeName').on('change', alertLoggedIn);
 });
-
-
-function alertLoggedIn() {
-	
-}
