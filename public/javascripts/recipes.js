@@ -67,6 +67,7 @@ function deleteRecipe(event) {
 				// location.reload();
 			}
 			populateTable();
+			$('#recipeDetails').addClass('hidden');
 		});
 	} else {
 		return false;
