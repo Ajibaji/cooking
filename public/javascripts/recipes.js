@@ -8,7 +8,6 @@ function getCookie(name, next) {
 
 function addRecipe(event) {
 	event.preventDefault();
-	console.log('ading');
 
 	var errorCount = 0;
 	$('#addRecipe input').each(function(index, val) {
