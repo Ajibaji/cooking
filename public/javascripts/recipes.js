@@ -9,6 +9,7 @@ function getCookie(name, next) {
 
 function addRecipe(event) {
 	event.preventDefault();
+	console.log('ading');
 
 	var errorCount = 0;
 	$('#addRecipe input').each(function(index, val) {
@@ -39,11 +40,14 @@ function addRecipe(event) {
 		}).always(function( response ) {
 			if (response.status === 200) {
 				$('#addRecipe fieldset input').val('');
+				populateTable();
 			}
 			else {
 				alert('Error: ' + response.statusText);
 			}
 		});
+
+
 	}
 	else {
 		alert('Please fill in all fields');
@@ -66,6 +70,7 @@ function deleteRecipe(event) {
 				alert('Error: ' + response.statusText);
 				// location.reload();
 			}
+			populateTable();
 		});
 	} else {
 		return false;
