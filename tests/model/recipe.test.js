@@ -4,7 +4,6 @@ const testName = 'testName';
 const testTime = '11:00';
 const testIngredients = ['sugar', 'flower', 'butter'];
 const testMethod = 'testMethod';
-const testUserId = 'testUserId';
 
 var testRecipe = new Recipe(testName, testTime, testIngredients, testMethod);
 

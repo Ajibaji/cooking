@@ -3,7 +3,7 @@ function populateTable () {
 
 	$.getJSON( '/documents/documentlist/', function( data ) {
 		let documentListData = data;
-		console.log('populating')
+		console.log('populating');
 
 		$.each(data, function(){
 			tableContent += '<tr>';
