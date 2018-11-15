@@ -7,6 +7,7 @@ pipeline {
         stage("Installation") {
             steps {
                 git "https://github.com/pliantmeerkat/cooking.git"
+                sh "selenium-standalone install"
                 sh "npm install"
                 // sh "npm install -g eslint"
             }
