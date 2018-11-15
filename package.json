@@ -16,6 +16,8 @@
     "express": "^4.16.4",
     "jade": "~1.9.2",
     "jade-bootstrap": "~1.0.6",
+    "jquery-ui": "github:components/jqueryui#1.11.4",
+    "jqueryui": "^1.11.1",
     "lodash": "^4.16.1",
     "mocha": "^3.2.0",
     "mongodb": "^1.4.40",
@@ -28,6 +30,7 @@
   },
   "devDependencies": {
     "chromedriver": "^2.43.1",
+    "connect-flash": "^0.1.1",
     "cucumber": "^5.0.2",
     "cypress": "^3.1.1",
     "jest": "^23.6.0",

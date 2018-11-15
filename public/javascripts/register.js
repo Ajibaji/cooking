@@ -22,12 +22,11 @@ function registerUser(event) {
 			dataType: 'JSON'
 		}).always((data) => {
 			if(data.status === 200) {
-				console.log('regLogPass');
 				alert('Registered and Logged in!');
 				window.location.href = 'http://localhost:3000/';
 			} else {
-				console.log('regLogFail');
-				alert('Username Taken');
+				$('#userDetails').effect('shake');
+				// alert('Username Taken');
 			}
 		});
 	}
@@ -67,7 +66,8 @@ function login(event) {
 				alert('Logged in!');
 				window.location.href = 'http://localhost:3000/';
 			} else {
-				alert('Incorrect Username or Password entered');
+				// alert('Incorrect Username or Password entered');
+				$('#userDetails').effect('shake');
 			}
 		});
 	}
