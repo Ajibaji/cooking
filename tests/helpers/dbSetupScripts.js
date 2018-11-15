@@ -25,7 +25,7 @@ var databaseSetup = {
 	addTestData: function() {
 		stubIdUser.setId('5bec4b21d78d282e16f87415');
 		stubIdRecipe.set_id('5bec4b21d78d282e16f87415');
-		stubIdRecipe.setUserId(`j:\"5bec4b21d78d282e16f87415\"`);
+		stubIdRecipe.setUserId('j:\"5bec4b21d78d282e16f87415\"');
 		users.insert(testUserList)
 			.catch((err) => {
 				// console.log(err);

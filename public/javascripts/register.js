@@ -35,6 +35,11 @@ function registerUser(event) {
 	}
 }
 
+function logout(event) {
+	alert('Logged Out');
+	window.location.href = 'http://localhost:3000/logout';
+}
+
 function login(event) {
 	event.preventDefault();
 

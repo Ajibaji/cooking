@@ -6,7 +6,6 @@ function getCookie(name, next) {
 	}
 }
 
-
 function addRecipe(event) {
 	event.preventDefault();
 	console.log('ading');
@@ -46,8 +45,6 @@ function addRecipe(event) {
 				alert('Error: ' + response.statusText);
 			}
 		});
-
-
 	}
 	else {
 		alert('Please fill in all fields');
