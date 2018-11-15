@@ -1,5 +1,5 @@
 const {Given, When, Then} = require('cucumber');
-const expect = require('mocha');
+const assert = require('assert');
 // valid registration
 
 var userDetails = [
@@ -29,6 +29,7 @@ When(/valid username/, function() {
 });
 
 Then(/confirming my registration/, function() {
-	let result = browser.log(console);
-	console.log(result);
+	
+	assert(browser.getUrl()).toEqual('http://localhost:3000/');
+	// expect(x).toEqual('trres');
 });

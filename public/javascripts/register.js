@@ -64,11 +64,9 @@ function login(event) {
 			dataType: 'JSON'
 		}).always((data) => {
 			if(data.status === 200) {
-				console.log('logPass');
 				alert('Logged in!');
 				window.location.href = 'http://localhost:3000/';
 			} else {
-				console.log('logFail');
 				alert('Incorrect Username or Password entered');
 			}
 		});
