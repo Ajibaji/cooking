@@ -27,20 +27,9 @@
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
-    "chromedriver": "^2.43.1",
-    "cucumber": "^5.0.2",
     "cypress": "^3.1.1",
-    "firefox-profile": "^1.2.0",
     "jest": "^23.6.0",
     "logger": "0.0.1",
-    "phantomjs": "^2.1.7",
-    "supertest": "^3.3.0",
-    "wdio-chromedriver-service": "^0.1.3",
-    "wdio-cucumber-framework": "^2.2.8",
-    "wdio-firefox-profile-service": "^0.1.3",
-    "wdio-mocha-framework": "^0.6.4",
-    "wdio-phantomjs-service": "^0.2.2",
-    "wdio-selenium-standalone-service": "0.0.10",
-    "webdriverio": "^4.14.0"
+    "supertest": "^3.3.0"
   }
 }
