@@ -27,11 +27,13 @@
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
+    "chromedriver": "^2.43.1",
     "cucumber": "^5.0.2",
     "cypress": "^3.1.1",
     "firefox-profile": "^1.2.0",
     "jest": "^23.6.0",
     "logger": "0.0.1",
+    "phantomjs": "^2.1.7",
     "supertest": "^3.3.0",
     "wdio-chromedriver-service": "^0.1.3",
     "wdio-cucumber-framework": "^2.2.8",
