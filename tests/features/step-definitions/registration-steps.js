@@ -29,9 +29,6 @@ When(/valid username/, function() {
 });
 
 Then(/confirming my registration/, function() {
-	try {
-		browser.alertAccept();
-	} catch(e) {
-		console.log(e);
-	}
+	let result = browser.log(console);
+	console.log(result);
 });
