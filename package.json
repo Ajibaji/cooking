@@ -30,6 +30,7 @@
   "devDependencies": {
     "cypress": "^3.1.1",
     "jest": "^23.6.0",
+    "logger": "0.0.1",
     "shelljs": "^0.8.3",
     "supertest": "^3.3.0"
   }
