@@ -44,12 +44,12 @@ describe('Router tests', function() {
 			makePostRequest('/login', 200, data, done);
 		});
 
-		it('\'/login\' with invalid params should return 418', function(done) {
+		it('\'/login\' with invalid params should return 400', function(done) {
 			let data = {
 				'username': 'testUser1',
 				'password': 'fakepassword'
 			};
-			makePostRequest('/login', 418, data, done);
+			makePostRequest('/login', 400, data, done);
 		});
 
 		// register
@@ -64,14 +64,14 @@ describe('Router tests', function() {
 			makePostRequest('/register', 200, data, done);
 		});
 
-		it('\'/register\' with invalid params should return 418', function(done) {
+		it('\'/register\' with invalid params should return 400', function(done) {
 			let data = {
 				'username': 'testUser1',
 				'password': 'testPassword1',
 				'firstName': 'testFirstName',
 				'lastName': 'testLastname'
 			};
-			makePostRequest('/register', 418, data, done);
+			makePostRequest('/register', 400, data, done);
 		});
 
 	});
