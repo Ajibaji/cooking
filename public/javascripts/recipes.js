@@ -35,14 +35,13 @@ function addRecipe(event) {
 			data: newRecipe,
 			url: '/documents/adddocument',
 			dataType: 'JSON'
-		}).done(function( response ) {
-
-			if (response.msg === '') {
+		}).always(function( response ) {
+			if (response.status === 200) {
 				$('#addRecipe fieldset input').val('');
 				populateTable();
 			}
 			else {
-				alert('Error: ' + response.msg);
+				alert('Error: ' + response.statusText);
 			}
 		});
 	}
@@ -55,21 +54,20 @@ function addRecipe(event) {
 function deleteRecipe(event) {
 	event.preventDefault();
 
-	var confirmation = confirm('Are you sure you want to delete this user?');
+	var confirmation = confirm('Are you sure you want to delete this recipe?');
 
 	if (confirmation === true) {
 		$.ajax({
 			type: 'DELETE',
-			url: '/documents/deletedocument/' + $(this).attr('rel')
-		}).done(function( response ) {
-
-			if (response.msg === '') {
+			url: '/documents/deletedocument/' + $(this).attr('rel'),
+			dataType: 'JSON'
+		}).always(function( response ) {
+			if (response.status !== 200) {
+				alert('Error: ' + response.statusText);
+				// location.reload();
 			}
-			else {
-				alert('Error: ' + response.msg);
-			}
-
 			populateTable();
+			$('#recipeDetails').addClass('hidden');
 		});
 	} else {
 		return false;

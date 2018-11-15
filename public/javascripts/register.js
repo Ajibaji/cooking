@@ -20,12 +20,24 @@ function registerUser(event) {
 			data: userDetails,
 			url: '/register',
 			dataType: 'JSON'
-		}).done();
+		}).always((data) => {
+			if(data.status === 200) {
+				alert('Registered and Logged in!');
+				window.location.href = 'http://localhost:3000/';
+			} else {
+				alert('Username Taken');
+			}
+		});
 	}
 	else {
 		alert('Please fill in all fields');
 		return false;
 	}
+}
+
+function logout(event) {
+	alert('Logged Out');
+	window.location.href = 'http://localhost:3000/logout';
 }
 
 function login(event) {
@@ -40,7 +52,7 @@ function login(event) {
 
 		var userDetails = {
 			'username': $('#inputUsername').val(),
-			'firstname': $('#inputFirstname').val()
+			'password': $('#inputPassword').val()
 		};
 
 		$.ajax({
@@ -48,7 +60,14 @@ function login(event) {
 			data: userDetails,
 			url: '/login',
 			dataType: 'JSON'
-		}).done();
+		}).always((data) => {
+			if(data.status === 200) {
+				alert('Logged in!');
+				window.location.href = 'http://localhost:3000/';
+			} else {
+				alert('Incorrect Username or Password entered');
+			}
+		});
 	}
 	else {
 		alert('Please fill in all fields');

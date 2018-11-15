@@ -1,0 +1,46 @@
+extends layout
+block content
+        //MAIN
+        #mainContainer
+        // BANNER
+        .jumbotron#cookbookBanner
+                div.container
+                    h1= title
+                    p Welcome to the your account space. Your stored recipes are held here.
+                    br
+                    button.btn.btn-primary#btnLogout Logout
+        // Wrapper
+        #wrapper
+        // RECIPE LIST
+        div.panel.panel-default
+            h2.panel-heading Recipe List
+            .panel-body#documentList
+                table.list-group
+                    thead
+                        th RecipeName
+                        th CookingTime
+                        th Delete?
+                    tbody
+                // /RECIPE List
+                // RECIPE DETAILS
+                div#recipeDetails.panel.panel-default.hidden
+                    h2.panel-heading Recipe Details
+                    div.panel-body#main-recipeDetails
+                        #container-recipeDetails
+                            strong RecipeName:
+                            |  <span id='recipeInfoName'></span>
+                            br
+                        #container-recipeDetails
+                            strong CookingTime:
+                            |  <span id='recipeInfoCookingTime'></span>
+                            br
+                        #container-recipeDetails
+                            strong Ingredients:
+                            |  <span id='recipeInfoIngredients'></span>
+                            br
+                        #container-recipeDetails
+                            strong Instructions:
+                            |  <span id='recipeMethod'></span>
+                // /RECIPE DETAILS
+            
+            // WRAPPER

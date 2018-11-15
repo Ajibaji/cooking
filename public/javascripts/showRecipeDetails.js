@@ -18,3 +18,4 @@ function showRecipeDetails(event) {
 	$('#recipeDetails').removeClass('hidden');
 	$('#recipeDetails').addClass('active');
 }
+
