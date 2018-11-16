@@ -16,6 +16,21 @@ var selectors = [
 ];
 
 Given(/on the login page/, function() {
-
+	browser.url('http://localhost:3000/login');
 });
 
+Given(/previously registered/, function() {
+	browser.setValue(selectors[0], userDetails[0]);
+});
+
+When(/username and password/, function() {
+    
+});
+
+When(/Click the login button/, function() {
+    
+});
+
+Then(/confirming my login/, function() {
+    
+});

@@ -30,27 +30,27 @@ var databaseSetup = {
 		stubIdRecipe.setUserId('j:\'5bec4b21d78d282e16f87415\'');
 		users.insert(testUserList)
 			.catch((err) => {
-				logger.error(err);
+				// logger.error(err);
 			}).then(() => db.close());
 		recipes.insert(testRecipeList)
 			.catch((err) => {
-				logger.error(err);
+				// logger.error(err);
 			}).then(() => db.close());
 	},
 	clearTestData: function() {
 		users.drop()
 			.catch((err) => {
-				logger.error(err);
+				// logger.error(err);
 			}).then(() => db.close());
 		recipes.drop()
 			.catch((err) => {
-				logger.error(err);
+				// logger.error(err);
 			}).then(() => db.close());
 	},
 	countItems: function() {
 		recipes.count({}, function (error, count) {
 			if(error) {
-				logger.error(error);
+				// logger.error(error);
 			}
 			return count;
 		});
