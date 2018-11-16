@@ -38,7 +38,7 @@ function registerUser(event) {
 
 function logout(event) {
 	alert('Logged Out');
-	window.location.href = 'http://localhost:3000/logout';
+	window.location.href = '/logout';
 }
 
 function login(event) {
@@ -63,7 +63,7 @@ function login(event) {
 			dataType: 'JSON'
 		}).always((data) => {
 			if(data.status === 200) {
-				window.location.href = 'http://localhost:3000/';
+				window.location.href = '/';
 				banner('Logged in!', true);
 			} else {
 				$('#userDetails').effect('shake');
