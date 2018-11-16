@@ -3,7 +3,6 @@ function populateTable () {
 
 	$.getJSON( '/documents/documentlist/', function( data ) {
 		documentListData = data;
-
 		$.each(data, function(){
 			tableContent += '<tr>';
 			tableContent += '<td><a href="#" class="linkshowrecipedetails" rel="' + this.recipeName + '">' + this.recipeName + '</a></td>';

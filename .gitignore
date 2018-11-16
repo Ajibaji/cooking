@@ -113,3 +113,7 @@ typings/
 # FuseBox cache
 .fusebox/
 
+# debiug screenshots
+
+.png
+errorShots/

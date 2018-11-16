@@ -20,12 +20,26 @@ function registerUser(event) {
 			data: userDetails,
 			url: '/register',
 			dataType: 'JSON'
-		}).done();
+		}).always((data) => {
+			if(data.status === 200) {
+				banner('Registered and Logged in!', true);
+				window.location.href = '/';
+			} else {
+				$('#userDetails').effect('shake');
+				banner('Username taken', false);
+			}
+		});
 	}
 	else {
-		alert('Please fill in all fields');
+		$('#userDetails').effect('shake');
+		banner('Please fill in all fields');
 		return false;
 	}
+}
+
+function logout(event) {
+	banner('Logged Out', true);
+	window.location.href = '/logout';
 }
 
 function login(event) {
@@ -40,7 +54,7 @@ function login(event) {
 
 		var userDetails = {
 			'username': $('#inputUsername').val(),
-			'firstname': $('#inputFirstname').val()
+			'password': $('#inputPassword').val()
 		};
 
 		$.ajax({
@@ -48,10 +62,19 @@ function login(event) {
 			data: userDetails,
 			url: '/login',
 			dataType: 'JSON'
-		}).done();
+		}).always((data) => {
+			if(data.status === 200) {
+				window.location.href = '/';
+				banner('Logged in!', true);
+			} else {
+				$('#userDetails').effect('shake');
+				banner('Incorrect username or password');
+			}
+		});
 	}
 	else {
-		alert('Please fill in all fields');
+		$('#userDetails').effect('shake');
+		banner('Please fill in all fields');
 		return false;
 	}
 }
