@@ -1,6 +1,6 @@
 Feature: Registration
 
-    In oder to user Cooking app
+    In oder to use Cooking app
     As a user
     I would like to create an account
 
