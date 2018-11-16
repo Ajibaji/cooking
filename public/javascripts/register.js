@@ -22,16 +22,16 @@ function registerUser(event) {
 			dataType: 'JSON'
 		}).always((data) => {
 			if(data.status === 200) {
-				alert('Registered and Logged in!');
+				banner('Registered and Logged in!', true);
 				window.location.href = 'http://localhost:3000/';
 			} else {
 				$('#userDetails').effect('shake');
-				// alert('Username Taken');
+				banner('Username taken', false);
 			}
 		});
 	}
 	else {
-		alert('Please fill in all fields');
+		banner('Please fill in all fields');
 		return false;
 	}
 }
@@ -63,16 +63,17 @@ function login(event) {
 			dataType: 'JSON'
 		}).always((data) => {
 			if(data.status === 200) {
-				alert('Logged in!');
 				window.location.href = 'http://localhost:3000/';
+				banner('Logged in!', true);
 			} else {
-				// alert('Incorrect Username or Password entered');
 				$('#userDetails').effect('shake');
+				banner('Incorrect username or password');
 			}
 		});
 	}
 	else {
-		alert('Please fill in all fields');
+		$('#userDetails').effect('shake');
+		banner('Please fill in all fields');
 		return false;
 	}
 }
