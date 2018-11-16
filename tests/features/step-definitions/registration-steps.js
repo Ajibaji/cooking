@@ -1,4 +1,5 @@
-const {Given, When, Then} = require('cucumber');
+const {After, Before, Given, When, Then} = require('cucumber');
+const dbSetup = require('../../helpers/dbSetupScripts');
 const assert = require('assert');
 
 // valid registration
@@ -7,7 +8,8 @@ var userDetails = [
 	'validUsername',
 	'validPassword',
 	'validFirstName',
-	'validLastName'
+	'validLastName',
+	'testUser1'
 ];
 
 var selectors = [
@@ -20,10 +22,17 @@ var selectors = [
 
 function submitAndVerify(text) {
 	browser.click(selectors[4]);
-	browser.waitForVisible('#dialog', 2000);
 	let result = browser.getText('#dialog');
 	assert.equal(result, text);
 }
+
+Before(function () {
+	dbSetup.addTestData();
+});
+
+After(function () {
+	dbSetup.clearTestData();
+});
 
 // sucess login
 
@@ -38,6 +47,21 @@ When(/valid username/, function() {
 });
 
 Then(/confirming my registration/, function() {
-	submitAndVerify('Registered and Logged in');
+	browser.click(selectors[4]);
+	browser.waitUntil(function () {
+		return browser.getUrl() === 'http://localhost:3000/';
+	}, 00, 'expected ' +  browser.getUrl() + 'to be different after 5s');
 });
 
+When(/an in use username/, function() {
+	browser.setValue(selectors[0], userDetails[4]);
+	for(let i = 1; i < 4; i ++) {
+		browser.setValue(selectors[i], userDetails[i]);
+	}
+});
+
+Then(/username has been taken/, function() {
+	browser.click(selectors[4]);
+	let result = browser.getText('#dialog');
+	assert.equal(result, 'Username taken');
+});
