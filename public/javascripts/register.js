@@ -67,13 +67,13 @@ function login(event) {
 				window.location.href = '/';
 				banner('Logged in!', true);
 			} else {
-				$('#userDetails').effect('shake');
+				$('#loginDetails').effect('shake');
 				banner('Incorrect username or password');
 			}
 		});
 	}
 	else {
-		$('#userDetails').effect('shake');
+		$('#loginDetails').effect('shake');
 		banner('Please fill in all fields');
 		return false;
 	}
