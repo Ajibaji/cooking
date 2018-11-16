@@ -23,7 +23,7 @@ function registerUser(event) {
 		}).always((data) => {
 			if(data.status === 200) {
 				alert('Registered and Logged in!');
-				window.location.href = 'http://localhost:3000/';
+				window.location.href = '/';
 			} else {
 				alert('Username Taken');
 			}
@@ -37,7 +37,7 @@ function registerUser(event) {
 
 function logout(event) {
 	alert('Logged Out');
-	window.location.href = 'http://localhost:3000/logout';
+	window.location.href = '/logout';
 }
 
 function login(event) {
@@ -63,7 +63,7 @@ function login(event) {
 		}).always((data) => {
 			if(data.status === 200) {
 				alert('Logged in!');
-				window.location.href = 'http://localhost:3000/';
+				window.location.href = '/';
 			} else {
 				alert('Incorrect Username or Password entered');
 			}
