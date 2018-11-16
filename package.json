@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "jest ;mocha tests/routerTests"
+    "test": "jest ;mocha tests/routerTests; wdio"
   },
   "dependencies": {
     "bluebird": "^3.4.6",

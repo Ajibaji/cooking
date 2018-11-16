@@ -50,7 +50,7 @@ Then(/confirming my registration/, function() {
 	browser.click(selectors[4]);
 	browser.waitUntil(function () {
 		return browser.getUrl() === 'http://localhost:3000/';
-	}, 00, 'expected ' +  browser.getUrl() + 'to be different after 5s');
+	}, 2000, 'expected ' +  browser.getUrl() + 'to be different after 5s');
 });
 
 When(/an in use username/, function() {
@@ -63,7 +63,9 @@ When(/an in use username/, function() {
 Then(/username has been taken/, function() {
 	browser.click(selectors[4]);
 	let result = browser.getText('#dialog');
-	assert.equal(result, 'Username taken');
+	browser.waitUntil(function () {
+		return result === 'Username taken';
+	}, 2000, 'expected ' +  result + 'to be Username taken');
 });
 
 When(/nothing entered/, function() {

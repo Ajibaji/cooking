@@ -1,6 +1,6 @@
 Feature: Registration
 
-    In oder to user Cooking app
+    In oder to use Cooking app
     As a user
     I would like to create an account
 
@@ -12,7 +12,7 @@ Feature: Registration
 
     Scenario: Registration with invalid details
         Given I am on the registration page
-        When I enter the regisgtration details with an in use username
+        When I enter the registration details with an in use username
         Then I should see a message telling me my username has been taken
 
     Scenario: Registration with no details

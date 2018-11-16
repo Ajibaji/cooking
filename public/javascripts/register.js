@@ -69,6 +69,7 @@ function login(event) {
 			} else {
 				$('#loginDetails').effect('shake');
 				banner('Incorrect username or password');
+				$('#loginDetails').effect('shake');	
 			}
 		});
 	}
