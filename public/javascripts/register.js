@@ -67,8 +67,8 @@ function login(event) {
 				window.location.href = '/';
 				banner('Logged in!', true);
 			} else {
-				$('#loginDetails').effect('shake');
 				banner('Incorrect username or password');
+				$('#loginDetails').effect('shake');	
 			}
 		});
 	}

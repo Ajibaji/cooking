@@ -11,12 +11,12 @@ Feature: Login
         And Click the login button
         Then I should see a message confirming my login
 
-    # Scenario: Login with invalid password
-    #     Given I am on the login page
-    #     And I have previously registered an account
-    #     When I enter my username with the wrong password
-    #     And Click the login button
-    #     Then I should see a message confirming my username or password was incorrect
+    Scenario: Login with invalid password
+        Given I am on the login page
+        And I have previously registered an account
+        When I enter my username with the wrong password
+        And Click the login button
+        Then I should see a message confirming my username or password was incorrect
 
     # Scenario: Login with invalid username
     #     Given I am on the login page
