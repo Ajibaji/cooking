@@ -65,3 +65,12 @@ Then(/username has been taken/, function() {
 	let result = browser.getText('#dialog');
 	assert.equal(result, 'Username taken');
 });
+
+When(/nothing entered/, function() {
+	browser.click(selectors[4]);
+});
+
+Then(/enter all fields/, function() {
+	let result = browser.getText('#dialog');
+	assert.equal(result, 'Please fill in all fields');
+});

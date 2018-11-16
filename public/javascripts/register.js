@@ -31,13 +31,14 @@ function registerUser(event) {
 		});
 	}
 	else {
+		$('#userDetails').effect('shake');
 		banner('Please fill in all fields');
 		return false;
 	}
 }
 
 function logout(event) {
-	alert('Logged Out');
+	banner('Logged Out', true);
 	window.location.href = '/logout';
 }
 
