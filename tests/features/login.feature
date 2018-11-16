@@ -18,15 +18,15 @@ Feature: Login
         And Click the login button
         Then I should see a message confirming my username or password was incorrect
 
-    # Scenario: Login with invalid username
-    #     Given I am on the login page
-    #     When I enter a non registered username
-    #     And Click the login button
-    #     Then I should see a message confirming my username or password was incorrect
+    Scenario: Login with invalid username
+        Given I am on the login page
+        When I enter a non registered username
+        And Click the login button
+        Then I should see a message confirming my username or password was incorrect
 
-    # Scenario: Login with no forms filled
-    #     Given I am on the login page
-    #     When I Click the login button
-    #     And Have not filled in any user details
-    #     Then I should see a message saying I have not entered any fields
+    Scenario: Login with no forms filled
+        Given I am on the login page
+        When I Click the login button
+        And Have not filled in any user details
+        Then I should see a message saying I have not entered any fields
 

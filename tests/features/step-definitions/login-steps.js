@@ -55,3 +55,19 @@ Then(/username or password incorrect/, function() {
 		return result === 'Incorrect username or password';
 	}, 2000, 'expected ' +  result + 'to be different after 5s');
 });
+
+When(/non registered username/, function() {
+	browser.setValue(selectors[1], userDetails[2]);
+	browser.setValue(selectors[1], userDetails[1]);
+});
+
+When(/not filled in/, function() {
+	// nothing entered
+});
+
+Then(/not entered any fields/, function() {
+	let result = browser.getText('#dialog');
+	browser.waitUntil(function () {
+		return result === 'Please fill in all fields';
+	}, 2000, 'expected ' +  result + 'to be different after 5s');
+});
