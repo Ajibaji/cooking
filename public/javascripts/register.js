@@ -23,7 +23,7 @@ function registerUser(event) {
 		}).always((data) => {
 			if(data.status === 200) {
 				banner('Registered and Logged in!', true);
-				window.location.href = 'http://localhost:3000/';
+				window.location.href = '/';
 			} else {
 				$('#userDetails').effect('shake');
 				banner('Username taken', false);
