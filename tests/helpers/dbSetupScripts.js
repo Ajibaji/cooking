@@ -47,6 +47,14 @@ var databaseSetup = {
 				logger.error(err);
 			}).then(() => db.close());
 	},
+	countItems: function() {
+		recipes.count({}, function (error, count) {
+			if(error) {
+				logger.error(error);
+			}
+			return count;
+		});
+	}
 };
 
 

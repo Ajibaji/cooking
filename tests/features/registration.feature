@@ -10,12 +10,12 @@ Feature: Registration
         When I enter the regisgtration dteails with a valid username
         Then I should see a message confirming my registration
 
-    # Scenario: Registration with invalid details
-    #     Given I am on the registration page
-    #     When I enter the regisgtration details with an in use username
-    #     Then I should see a message telling me my username has been taken
+    Scenario: Registration with invalid details
+        Given I am on the registration page
+        When I enter the regisgtration details with an in use username
+        Then I should see a message telling me my username has been taken
 
-    # Scenario: Registration with no details
-    #     Given I am on the registration page
-    #     When I click 'Register' with nothing entered
-    #     Then I should see a message telling me to enter all fields
+    Scenario: Registration with no details
+        Given I am on the registration page
+        When I click 'Register' with nothing entered
+        Then I should see a message telling me to enter all fields

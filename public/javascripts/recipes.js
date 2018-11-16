@@ -41,12 +41,12 @@ function addRecipe(event) {
 				populateTable();
 			}
 			else {
-				alert('Error: ' + response.statusText);
+				banner('Error: ' + response.statusText);
 			}
 		});
 	}
 	else {
-		alert('Please fill in all fields');
+		banner('Please fill in all fields');
 		return false;
 	}
 }
@@ -63,7 +63,7 @@ function deleteRecipe(event) {
 			dataType: 'JSON'
 		}).always(function( response ) {
 			if (response.status !== 200) {
-				alert('Error: ' + response.statusText);
+				banner('Error: ' + response.statusText);
 				// location.reload();
 			}
 			populateTable();
