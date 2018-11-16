@@ -2,7 +2,7 @@ const expect = require('mocha').expect;
 
 module.exports = function() {
 	this.Given(/I am on the registration page/, function(callback) {
-		browser.url('http://localhost:3000/register');
+		browser.url('/register');
 		expect(2).toBe(2);
 	});
 	
