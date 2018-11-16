@@ -24,7 +24,7 @@ Given(/previously registered/, function() {
 });
 
 When(/username and password/, function() {
-    
+	browser.setValue(selectors[1], userDetails[1]);
 });
 
 When(/Click the login button/, function() {
